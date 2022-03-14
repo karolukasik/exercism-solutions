@@ -23,6 +23,7 @@
 hs_err_pid*
 
 .exercism/
+.vscode/
 .gradle/
 .settings/
 bin/
@@ -32,3 +33,4 @@ build/
 build.gradle
 HELP.md
 HINTS.md
+*.ini
