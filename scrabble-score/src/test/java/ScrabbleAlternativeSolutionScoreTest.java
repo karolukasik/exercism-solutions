@@ -2,81 +2,71 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ScrabbleScoreTest {
+public class ScrabbleAlternativeSolutionScoreTest {
 
     @Test
     public void testALowerCaseLetter() {
-        Scrabble scrabble = new Scrabble("a");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("a");
         assertEquals(1, scrabble.getScore());
     }
 
-    
     @Test
     public void testAUpperCaseLetter() {
-        Scrabble scrabble = new Scrabble("A");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("A");
         assertEquals(1, scrabble.getScore());
     }
 
-    
     @Test
     public void testAValuableLetter() {
-        Scrabble scrabble = new Scrabble("f");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("f");
         assertEquals(4, scrabble.getScore());
     }
 
-    
     @Test
     public void testAShortWord() {
-        Scrabble scrabble = new Scrabble("at");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("at");
         assertEquals(2, scrabble.getScore());
     }
 
-    
     @Test
     public void testAShortValuableWord() {
-        Scrabble scrabble = new Scrabble("zoo");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("zoo");
         assertEquals(12, scrabble.getScore());
     }
 
-    
     @Test
     public void testAMediumWord() {
-        Scrabble scrabble = new Scrabble("street");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("street");
         assertEquals(6, scrabble.getScore());
     }
 
-    
     @Test
     public void testAMediumValuableWord() {
-        Scrabble scrabble = new Scrabble("quirky");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("quirky");
         assertEquals(22, scrabble.getScore());
     }
 
-    
     @Test
     public void testALongMixCaseWord() {
-        Scrabble scrabble = new Scrabble("OxyphenButazone");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("OxyphenButazone");
         assertEquals(41, scrabble.getScore());
     }
 
-    
     @Test
     public void testAEnglishLikeWord() {
-        Scrabble scrabble = new Scrabble("pinata");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("pinata");
         assertEquals(8, scrabble.getScore());
     }
 
-    
     @Test
     public void testAnEmptyInput() {
-        Scrabble scrabble = new Scrabble("");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("");
         assertEquals(0, scrabble.getScore());
     }
 
-    
     @Test
     public void testEntireAlphabetAvailable() {
-        Scrabble scrabble = new Scrabble("abcdefghijklmnopqrstuvwxyz");
+        ScrabbleAlternativeSolution scrabble = new ScrabbleAlternativeSolution("abcdefghijklmnopqrstuvwxyz");
         assertEquals(87, scrabble.getScore());
     }
 
