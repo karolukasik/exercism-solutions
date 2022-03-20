@@ -1,6 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
 
+//link to the original version: https://exercism.org/tracks/java/exercises/scrabble-score/solutions/YukinStacy
+
 class ScrabbleAlternativeSolution {
     private static final Map<Integer, Integer> letterScore = new HashMap<>(26);
     private String wordLowerCase;
