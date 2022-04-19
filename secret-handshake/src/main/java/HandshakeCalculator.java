@@ -1,4 +1,3 @@
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,15 +8,18 @@ class HandshakeCalculator {
         List<Signal> secretHandshake = new ArrayList<>();
 
         String numberInBinaryString = Integer.toBinaryString(number);
+        if (numberInBinaryString.length() > 5) {
+            numberInBinaryString = numberInBinaryString.substring(numberInBinaryString.length() - 5,
+                    numberInBinaryString.length());
+        }
         int numberInBinaryInt = Integer.parseInt(numberInBinaryString);
-        System.out.println(numberInBinaryInt);
 
         for (int i = 0; i < numberInBinaryString.length(); i++) {
             int digitInCheckingPosition = numberInBinaryInt % 10;
             if (digitInCheckingPosition == 1 && i != 4) {
                 secretHandshake.add(digitToSignalTranslation(i));
             } else if (digitInCheckingPosition == 1 && i == 4) {
-                // odwróć listę
+                secretHandshake = reverseList(secretHandshake);
             }
             numberInBinaryInt = numberInBinaryInt / 10;
         }
@@ -40,10 +42,7 @@ class HandshakeCalculator {
 
     }
 
-    public static Signal digitToSignalTranslation(int digitPosition) throws IllegalArgumentException {
-        if (digitPosition < 0 || digitPosition > 3) {
-            throw new IllegalArgumentException("Method works for max 5 digits");
-        }
+    public static Signal digitToSignalTranslation(int digitPosition) {
         if (digitPosition == 0) {
             return Signal.WINK;
         } else if (digitPosition == 1) {
@@ -56,6 +55,14 @@ class HandshakeCalculator {
             return null;
         }
 
+    }
+
+    public static List<Signal> reverseList(List<Signal> listOfSignals) {
+        List<Signal> reversedList = new ArrayList<>();
+        for (int i = listOfSignals.size() - 1; i >= 0; i--) {
+            reversedList.add(listOfSignals.get(i));
+        }
+        return reversedList;
     }
 
 }
