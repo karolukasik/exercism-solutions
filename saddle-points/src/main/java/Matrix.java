@@ -77,9 +77,7 @@ class Matrix {
                 .collect(Collectors.toCollection(ArrayList::new));
         Matrix matrix = new Matrix(matrixValues);
 
-        Matrix matrixEmpty = new Matrix(new ArrayList<>());
-
-        Set<MatrixCoordinate> saddlePoints = matrixEmpty.getSaddlePoints();
+        Set<MatrixCoordinate> saddlePoints = matrix.getSaddlePoints();
 
         for (MatrixCoordinate matrixCoordinate : saddlePoints) {
             System.out.println(matrixCoordinate.toString());
