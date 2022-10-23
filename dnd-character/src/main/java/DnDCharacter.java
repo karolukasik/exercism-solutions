@@ -23,11 +23,6 @@ class DnDCharacter {
         this.hitpoints = 10 + modifier(this.constitution);
     }
 
-    public static void main(String[] args) {
-        DnDCharacter viking = new DnDCharacter();
-
-    }
-
     int ability() {
         for (int i = 0; i < 4; i++) {
             dicesRolls.add(rollTheDice());
@@ -48,8 +43,6 @@ class DnDCharacter {
         return (int) (Math.floor(mod));
 
     }
-
-
 
     int getStrength() {
         return this.strength;
