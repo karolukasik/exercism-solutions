@@ -44,8 +44,6 @@ class DnDCharacter {
 
     }
 
-
-
     int getStrength() {
         return this.strength;
     }
